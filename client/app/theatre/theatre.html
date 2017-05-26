@@ -1,0 +1,46 @@
+<h3>Add Theatre</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <input type="text" placeholder="theatrename" class="form-control" ng-model="theatreCtrl.theatrename" />
+      </div>
+     <div class="form-group">
+       <input type="text" placeholder="location" class="form-control" ng-model="theatreCtrl.location" />
+   </div>
+    <div class="form-group">
+        <input type="text" placeholder="showtime" id="UserSelector" class="form-control" ng-modul="theatreCtrl.showtime" />
+
+           <button ng-click="theatreCtrl.Add()" class="btn btn-success">Add showtime</button>
+      <select id="mySelect" multiple></select>
+     </div>
+
+       <button class="btn btn-success" ng-click="theatreCtrl.Addtheatre()">Add</button>
+        <button type="button" ng-click="theatreCtrl.update()" class="btn btn-primary">Update</button><br><br>
+        <div class="row">
+        <div class="col-md-12">
+                <table class="table table-default table-hover">
+              <h3><font face="verdana" color="blue">Theatre List:</font></h3>
+              <thead>
+              <tr>
+              <td><h3>Theatre</h3></td>
+                <td><h3>Location</h3></td>
+                <td><h3>Showtime</h3></td>
+              </tr>
+            </thead>
+              <tr ng-repeat="t in theatreCtrl.theatreDate">
+                <td>{{t.theatrename}}</td>
+                <td>{{t.location}}</td>
+                <td>{{t.showtime}}</td>
+                  <td>
+                    <button class="btn btn-primary" ng-click="theatreCtrl.Edit(t)">Edit</button>
+                  </td>
+                  <td>
+                    <button class="btn btn-danger" ng-click="theatreCtrl.Remove(t)">Remove</button>
+                  </td>
+              </tr>
+            </table>
+          </div>
+    </div>
+  </div>
+</div>
